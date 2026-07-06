@@ -36,6 +36,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/0e/d0/f4e9894c8aaf37efe3bf1afe15ee3cf0546d82b2713a589e266ee47bf2ef/snakemake_interface_scheduler_plugins-2.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0f/7c/062447147a61f8b4337b156fe70d32a165fcf2f89d7ca6255e572806705c/greenlet-3.5.3-cp313-cp313-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/10/70/800b3fca480af32df9e8ea9f3d4a0c8feb4b32d7f195d174eabbda4829ad/numpy-2.5.1-cp313-cp313-win_amd64.whl
+      - pypi: https://files.pythonhosted.org/packages/18/68/e89b4fa9242e59326c849c39ce0f49eb68499603c639405a8449900a4f15/netcdf4-1.7.4-cp311-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1f/ce/c60f248822f4a4cc922a2766714e884a2eced5d8fc06a26ffe875ae1de09/pyocclient-0.6.tar.gz
       - pypi: https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl
@@ -66,6 +67,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/61/5c78b91c3143ed5c14207f463aecfc8f9dbb5092fb2869baf37c273b2705/gitdb-4.0.12-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/a4/60/a0cfba63847b43599ef1cdbbf682e61894994c22b9a79fd9e1e8c7e9de41/cftime-1.6.5-cp313-cp313-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/a9/82/0340caa499416c78e5d8f5f05947ae4bc3cba53c9f038ab6e9ed964e22f1/nbformat-5.10.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/aa/43/cfdaf562303012024c8f48efebdfe258eef3d895665bd7e0000fdeb2411d/snakemake_interface_logger_plugins-2.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b1/e1/7c8d18e737433f3b5bbe27b56a9072a9fcb36342b48f1bef34b6da1d61f2/sqlmodel-0.0.37-py3-none-any.whl
@@ -392,6 +394,21 @@ packages:
   version: 2.5.1
   sha256: 6c3fe51bc6a16453d452997053454f309e8e0ed7b42d6b361ce4ac8c32913d74
   requires_python: '>=3.12'
+- pypi: https://files.pythonhosted.org/packages/18/68/e89b4fa9242e59326c849c39ce0f49eb68499603c639405a8449900a4f15/netcdf4-1.7.4-cp311-abi3-win_amd64.whl
+  name: netcdf4
+  version: 1.7.4
+  sha256: 9476e1f23161ae5159cd1548c50c8a37922e77d76583e247133f256ef7b825fc
+  requires_dist:
+  - cftime
+  - certifi
+  - numpy>=2.3.0 ; platform_machine == 'ARM64' and sys_platform == 'win32'
+  - numpy>=1.21.2 ; platform_machine != 'ARM64' or sys_platform != 'win32'
+  - cython ; extra == 'tests'
+  - packaging ; extra == 'tests'
+  - pytest ; extra == 'tests'
+  - typing-extensions>=4.15.0 ; extra == 'tests'
+  - mpi4py ; extra == 'parallel'
+  requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/1e/5e/d4e9f1a599fb8e573b7b87160658329fbf28d19eac2718f51fc3def3aa5a/idna-3.18-py3-none-any.whl
   name: idna
   version: '3.18'
@@ -800,6 +817,13 @@ packages:
   - certifi>=2023.5.7
   - pysocks>=1.5.6,!=1.5.7 ; extra == 'socks'
   - chardet>=3.0.2,<8 ; extra == 'use-chardet-on-py3'
+  requires_python: '>=3.10'
+- pypi: https://files.pythonhosted.org/packages/a4/60/a0cfba63847b43599ef1cdbbf682e61894994c22b9a79fd9e1e8c7e9de41/cftime-1.6.5-cp313-cp313-win_amd64.whl
+  name: cftime
+  version: 1.6.5
+  sha256: 6c27add8f907f4a4cd400e89438f2ea33e2eb5072541a157a4d013b7dbe93f9c
+  requires_dist:
+  - numpy>=1.21.2
   requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/a9/82/0340caa499416c78e5d8f5f05947ae4bc3cba53c9f038ab6e9ed964e22f1/nbformat-5.10.4-py3-none-any.whl
   name: nbformat

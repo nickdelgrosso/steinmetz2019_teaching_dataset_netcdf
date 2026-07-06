@@ -2,7 +2,11 @@ rule all:
     input:
         "references/steinmetz2019.pdf",
         "vids/eyetracking_example_steinmetz2019_sciebo-3sDmbQKgDYbDXrJ.avi",
-        "vids/mouse_wheel_example_steinmetz2019_sciebo-3sDmbQKgDYbDXrJ.avi"
+        "vids/mouse_wheel_example_steinmetz2019_sciebo-3sDmbQKgDYbDXrJ.avi",
+        directory("data/raw"),
+        directory("data/processed"),
+        directory("data/final"),
+
 
 rule download_nature_paper:
     """
@@ -17,8 +21,6 @@ rule download_nature_paper:
         urllib.request.urlretrieve(params.url, output.filename);
 
 
-
-
 rule download_sciebo_file:
     output:
         file = "{path}/{name}_sciebo-{sciebo_token}.{ext}"
@@ -30,3 +32,27 @@ rule download_sciebo_file:
         oc.get_file(f'/{wildcards.name}.{wildcards.ext}', output.file)
         
 
+
+rule download_data:
+    output: 
+        directory("data/raw")
+    script: 
+        "scripts/1_download_data.py"
+
+
+rule convert_raw_to_netcdf:
+    input:
+        directory("data/raw")
+    output:
+        directory("data/processed")
+    script:
+        "scripts/2_convert_to_netcdf.py"
+
+
+rule extract_to_csv:
+    input:
+        directory("data/processed")
+    output:
+        directory("data/final")
+    script:
+        "scripts/3_extract_and_merge_trials.py"

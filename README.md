@@ -4,6 +4,14 @@ Used in the Matlab and Python Neural Data Analysis Courses
 
 Data from Publication:  Steinmetz, N.A., Zatka-Haas, P., Carandini, M. et al. Distributed coding of choice, action and engagement across the mouse brain. Nature 576, 266–273 (2019). https://doi.org/10.1038/s41586-019-1787-x
 
+## Run the pipeline
+
+```
+pixi run pipeline
+```
+
+> **Running the pipeline takes around 10 minutes**: While the data is being downloaded feel free to watch [this video](https://youtu.be/WXn4-FpVaOo?si=JtCNyh6Xf102zOHg) from the Neuromatch academy in which Nicholas Steinmetz breifly explains the dataset. If you have doubts feel free to discuss them in your group!
+
 ## Download Data
 
 Run the jupyter notebook `Run Pipeline.ipynb` to download the data from the official sources.  
