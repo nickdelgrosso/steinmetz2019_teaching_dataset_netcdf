@@ -3,9 +3,8 @@ rule all:
         "references/steinmetz2019.pdf",
         "vids/eyetracking_example_steinmetz2019_sciebo-3sDmbQKgDYbDXrJ.avi",
         "vids/mouse_wheel_example_steinmetz2019_sciebo-3sDmbQKgDYbDXrJ.avi",
-        directory("data/raw"),
         directory("data/processed"),
-        directory("data/final"),
+        
 
 
 rule download_nature_paper:
