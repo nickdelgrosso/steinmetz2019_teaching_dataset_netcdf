@@ -12,11 +12,6 @@ pixi run pipeline
 
 > **Running the pipeline takes around 10 minutes**: While the data is being downloaded feel free to watch [this video](https://youtu.be/WXn4-FpVaOo?si=JtCNyh6Xf102zOHg) from the Neuromatch academy in which Nicholas Steinmetz breifly explains the dataset. If you have doubts feel free to discuss them in your group!
 
-## Download Data
-
-Run the jupyter notebook `Run Pipeline.ipynb` to download the data from the official sources.  
-
-In case the official raw data is deleted, we have a backup on Sciebo: https://uni-bonn.sciebo.de/apps/files/?dir=/steinmetz_neuromatch_dataset&fileid=2493828995
     
 
 ## Variable Explanation
@@ -36,3 +31,7 @@ In case the official raw data is deleted, we have a backup on Sciebo: https://un
 * `'feedback_time'`: when feedback was provided.
 * `'active_trials'`: `True` for active trials and `False` for passive trials (i.e. when the mouse was no longer engaged and stopped making responses).
 
+
+## Backups
+
+> In case the official raw data is deleted, we have a backup on Sciebo: https://uni-bonn.sciebo.de/apps/files/?dir=/steinmetz_neuromatch_dataset&fileid=2493828995
