@@ -6,6 +6,6 @@
 .snakemake
 
 # pipeline outputs
-references
+references/
+vids/
 data/
-
