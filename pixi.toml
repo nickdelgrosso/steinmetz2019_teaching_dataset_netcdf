@@ -1,0 +1,21 @@
+[workspace]
+authors = ["Nicholas A. Del Grosso <delgrosso.nick@gmail.com>"]
+channels = ["conda-forge"]
+name = "Dataset-Stenmetz"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+pipeline = "snakemake --cores 1"
+
+[dependencies]
+python = "3.13.*"
+pip = ">=26.1.2,<27"
+
+[pypi-dependencies]
+requests = ">=2.34.2, <3"
+tqdm = ">=4.68.3, <5"
+numpy = ">=2.5.1, <3"
+pandas = ">=3.0.3, <4"
+xarray = ">=2026.4.0, <2027"
+snakemake = ">=9.23.1, <10"
